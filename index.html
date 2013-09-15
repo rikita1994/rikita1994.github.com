@@ -14,22 +14,44 @@ h2 {font-size:30px;}
 
 	</style>
 	
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="js/easySlider1.7.js"></script>
-<script type="text/javascript" src="js/jquery.easing.js"></script>
-<script type="text/javascript">
-		$(document).ready(function(){	
-			$("#slider").easySlider({
-				auto: true, 
-				continuous: true
-			});
-			
-		});	
-</script>
-
-	
-
 </head>
+
+<html>
+<head>
+<script type="text/javascript">
+<!--
+var image1=new Image()
+image1.src="rikita1.jpg"
+var image2=new Image()
+image2.src="rikita2.jpg"
+var image3=new Image()
+image3.src="rikita3.jpg"
+//-->
+</script>
+</head>
+<body>
+<img src="rikita1.jpg" name="slide" width="100" height="56" />
+<script>
+<!--
+//variable that will increment through the images
+var step=1
+function slideit(){
+//if browser does not support the image object, exit.
+if (!document.images)
+return
+document.images.slide.src=eval("image"+step+".src")
+if (step<3)
+step++
+else
+step=1
+//call function "slideit()" every 2.5 seconds
+setTimeout("slideit()",2500)
+}
+slideit()
+//-->
+</script>
+</body>
+</html>
 
 
 
@@ -53,22 +75,12 @@ h2 {font-size:30px;}
 		
 		<h3>(This site is still under construction)</h3>
 	</div>
-	
-	<div id="photo1">    
-        <div id="slider">
-            <ul>	
-                <li><img src="assets/img/carousel/rikita1.jpg" /></li>
-                <li><img src="assets/img/carousel/rikita2.jpg" /></li>
-                <li><img src="assets/img/carousel/rikita3.jpg" /></li>
-            </ul>
-        </div>
-    </div>
-
 
 	<!-- add javascript code to the assets/js folder-->
 	<script type="text/javascript" src="assets/js/portfolio.js"></script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html>
